@@ -5,26 +5,34 @@ import java.util.List;
 
 public class NumberGame {
     public List<Integer> subtractTheEvenNumbers(List<Integer> numbers) {
-        numbers = new ArrayList<>();
-        System.out.println(numbers.size());
-        for (int i = 0; i < numbers.size(); i++) { if(numbers.get(i) % 2 != 0); }
-        return numbers;
+        List<Integer> result = new ArrayList<>();
+        for (int number : numbers) {
+            if (number % 2 == 0) {
+                result.add(number - 1);
+            } else {
+                result.add(number);
+            }
+        }
+        System.out.println(result.size());
+        return result;
     }
     public List<Integer> doubleTheNumbers(List<Integer> numbers) {
-        numbers = new ArrayList<>();
-        System.out.println(numbers.size());
-        return numbers;
+        List<Integer> result = new ArrayList<>();
+        for (int number : numbers) {
+            result.add(number * 2);
+        }
+        System.out.println(result.size());
+        return result;
     }
     public List<Integer> findAllOddNumbers(List<Integer> numbers) {
-        numbers = new ArrayList<>();
-        System.out.println(numbers.size());
-        if(isListOdd(numbers)) {
-            System.out.println("List contains only odd elements");
+        List<Integer> result = new ArrayList<>();
+        for (int number : numbers) {
+            if (number % 2 != 0) {
+                result.add(number);
+            }
         }
-        else{
-            System.out.println("list doesn't contains only odd elements");
-        }
-        return numbers;
+        System.out.println(result.size());
+        return result;
     }
     static boolean isListOdd(List<Integer> arr)
     {
